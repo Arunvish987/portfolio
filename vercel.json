@@ -1,0 +1,18 @@
+{
+    "builds": [
+      {
+        "src": "resumeproject/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      }
+    ],
+    "routes": [
+      {
+        // Specify which paths will route to a destination using a regex
+        "src": "/(.*)",
+        // Specify the paths' destination
+        "dest": "resumeproject/wsgi.py"
+      }
+    ]
+  }
+  
